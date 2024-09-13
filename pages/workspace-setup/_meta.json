@@ -1,0 +1,18 @@
+{
+    "workspaces": {
+        "title": "Workspaces",
+        "icon": "Building"
+    },
+    "invite-and-manage-members": {
+        "title": "Invite and manage members",
+        "icon": "People"
+    },
+    "login-methods": {
+        "title": "Login methods",
+        "icon": "Login"
+    },
+    "teams": {
+        "title": "Teams",
+        "icon": "User"
+    }
+}

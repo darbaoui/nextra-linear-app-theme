@@ -1,0 +1,73 @@
+Arguments: 
+  /Users/macbook/.nvm/versions/node/v21.5.0/bin/node /usr/local/Cellar/yarn/1.22.19/libexec/bin/yarn.js
+
+PATH: 
+  /Users/macbook/.nvm/versions/node/v21.5.0/bin:/usr/local/opt/php@8.2/sbin:/usr/local/opt/php@8.2/bin:/usr/local/opt/openjdk@11/bin:/usr/local/Cellar/php/8.2.1/bin:/usr/local/opt/icu4c/sbin:/usr/local/opt/icu4c/bin:/usr/local/opt/icu4c/sbin:/usr/local/opt/icu4c/bin:/Users/macbook/.rbenv/bin:/usr/local/opt/php@7.4/sbin:/usr/local/opt/php@7.4/bin:/usr/local/opt/php@7.4/sbin:/usr/local/opt/php@7.4/bin:/usr/local/opt/php@7.4/sbin:/usr/local/opt/php@7.4/bin:/Users/macbook/.rbenv/shims:/Users/macbook/.rbenv/bin:/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin:/Users/macbook/.composer/vendor/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/macbook/.rbenv/shims:/Users/macbook/.rbenv/bin:/Users/macbook/.nvm/versions/node/v21.5.0/bin:/usr/local/opt/php@8.2/sbin:/usr/local/opt/php@8.2/bin:/usr/local/opt/openjdk@11/bin:/usr/local/Cellar/php/8.2.1/bin:/usr/local/opt/icu4c/sbin:/usr/local/opt/icu4c/bin:/usr/local/opt/php@7.4/sbin:/usr/local/opt/php@7.4/bin:/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin:/Users/macbook/.composer/vendor/bin:/Applications/iTerm.app/Contents/Resources/utilities:/Users/macbook/Library/Android/sdk/emulator:/Users/macbook/Library/Android/sdk/tools:/Users/macbook/Library/Android/sdk/tools/bin:/Users/macbook/Library/Android/sdk/platform-tools:/Users/macbook/Library/Android/sdk/emulator:/Users/macbook/Library/Android/sdk/tools:/Users/macbook/Library/Android/sdk/tools/bin:/Users/macbook/Library/Android/sdk/platform-tools
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  21.5.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/macbook/Dev/TeamMateAlternativeBaseCamp/docs/package.json: Expected double-quoted property name in JSON at position 960 (line 34 column 3)
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:310:30)
+      at /usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "nextra-docs-template",
+    "version": "0.0.1",
+    "description": "Nextra docs template",
+    "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/shuding/nextra-docs-template.git"
+    },
+    "author": "Shu Ding <g@shud.in>",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/shuding/nextra-docs-template/issues"
+    },
+    "homepage": "https://github.com/shuding/nextra-docs-template#readme",
+    "dependencies": {
+      "@radix-ui/react-accordion": "^1.2.0",
+      "@radix-ui/react-icons": "^1.3.0",
+      "@radix-ui/react-slot": "^1.1.0",
+      "class-variance-authority": "^0.7.0",
+      "clsx": "^2.1.1",
+      "lucide-react": "^0.438.0",
+      "next": "^14.2.7",
+      "nextra": "latest",
+      "nextra-theme-docs": "latest",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
+      "tailwind-merge": "^2.5.2",
+      "tailwindcss-animate": "^1.0.7",
+    },
+    "devDependencies": {
+      "@types/node": "18.11.10",
+      "autoprefixer": "^10.4.20",
+      "pnpm": "^9.9.0",
+      "postcss": "^8.4.44",
+      "tailwindcss": "^3.4.10",
+      "typescript": "^4.9.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

@@ -1,0 +1,482 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import 'nextra/styles/variables.css'; */
+@import './code-block.css';
+/* @import 'nextra/styles/subheading-anchor.css';
+@import 'nextra/styles/scrollbar.css';
+@import 'nextra/styles/steps.css';
+@import 'nextra/styles/cards.css'; */
+
+
+@layer base {
+  :root {
+    --color-overlay-primary: hsla(0, 0%, 100%, .65);
+    --logo-black: #171717;
+    --logo-white:#fff; 
+    --font-size-regular: 0.9375rem;
+    --font-size-small: 0.8125rem;
+    --background: #fff;
+    --side_menu-background:#FBFBFB;
+    --foreground: #020817;
+    --title: #171717;
+    --title-secondary: #232529;
+    --border: #eeeff1;
+    --border-dropdown: #d8d8d8;
+    --description: #78716c;
+    /* input used in many places and use cases like onboarding skeleton */
+    --input: #e7e5e4;
+    --accent-foreground: #0F172A;
+    --primary: #2563EB;
+    --primary-rgb: 59, 130, 246;
+    --primary-foreground: #EEEFF1;
+    --accent: #f5f5f4;
+    --kanban-bg: #f5f5f4;
+    --muted: #f5f5f4;
+    --border-kanban: var(--border);
+    --shadow-color-dropdown: 0, 0, 0;
+    --shadow-color-dropdown-alpha: 0.09;
+    --shadow-color-modal-alpha: 0.5;
+    
+
+    --card: #fff;
+    --card-foreground: #020817;
+    --popover: #fff;
+    --popover-foreground: #020817;
+    --secondary: #F1F5F9;
+    --secondary-foreground: #0F172A;
+    --muted-foreground: #78716c;
+    --destructive: #EF4444;
+    --destructive-foreground: #F8FAFC;
+    --ring: #2563EB;
+    --radius: 0.5rem;
+
+
+    /* //nextra should be removed after the update */
+    --nextra-primary-hue: 212deg;
+    --nextra-primary-saturation: 100%;
+    --nextra-navbar-height: 4rem;
+    --nextra-menu-height: 3.75rem;
+    --nextra-banner-height: 2.5rem;
+  }
+
+  .dark {
+    --color-overlay-primary: rgba(0, 0, 0, .4);
+    --logo-black: #fff;
+    --logo-white:#171717; 
+    --background: #1B1D21;
+    --side_menu-background: #232529;
+    --foreground: #EEEFF1;
+    --title: #EAEAEA;
+    --title-secondary: #CFCFCF;
+    --border: #313337;
+     --border-dropdown: #313337;
+    --description: #C4BEB9;
+    --input: #313337;
+    --accent-foreground: #F8FAFC;
+    --primary: #3B82F6;
+    --primary-rgb: 59, 130, 246;
+    --primary-foreground: #EEEFF1;
+    --accent: #313337;
+    --border-kanban: #353536;
+    --kanban-bg: #18181b;
+    --muted: #313337;
+    --muted-foreground: #C4BEB9;
+    --shadow-color-dropdown-alpha: 0.7;
+    --shadow-color-dropdown: 0, 0, 0;
+    --shadow-color-modal-alpha: 0.5;
+    --destructive: #60301E;
+    
+    --card: #232529;
+    --popover: #232529;
+
+    --card-foreground: #F8FAFC;
+    --popover-foreground: #F8FAFC;
+    --secondary: #1E293B;
+    --secondary-foreground: #F8FAFC;
+    --destructive: #eb4947;
+    --destructive-foreground: #F8FAFC;
+    --ring: #1D4ED8;
+
+    --tw-ring-offset-shadow: 0 0 var(--background);
+    --tw-ring-shadow: 0 0 var(--background);
+
+    --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
+    --tw-shadow-colored: 0 10px 15px -3px var(--background), 0 4px 6px -4px var(--background);
+  }
+}
+
+
+
+html {
+  font-family: var(--font-sans); 
+  color:var(--title);
+  line-height: 1.5;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -ms-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    overflow-x: hidden;
+}
+
+.logo-fill-black{
+  fill: var(--logo-black)
+}
+.logo-fill-white{
+  fill: var(--logo-white)
+}
+
+[data-rmiz-overlay="true"] {
+  background-color: var(--background) !important;
+}
+
+.Navigation_next, .Navigation_prev {
+    display: block;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    padding: 16px;
+    flex-grow: 1;
+    width: 100%;
+    min-width: 0;
+    text-decoration: none;
+}
+
+.Sidebar_container {
+    /* position: fixed; */
+    top: 0;
+    /* bottom: 0; */
+    left: 0;
+    /* width: 280px; */
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    overflow: hidden;
+    z-index: 1;
+    border-right: 1px solid var(--accent);
+    background-color: var(--background);
+}
+
+
+.layout_wrapper {
+    flex-grow: 1;
+    display: flex;
+    /* flex-direction: column; */
+    --mobile-menu-trigger-height: 48px;
+    position: relative;
+    /* padding-left: 280px; */
+}
+
+.Sidebar_header {
+    flex-shrink: 0;
+    /* padding: var(--padding); */
+    padding-bottom: 0;
+}
+
+.Sidebar_listInner {
+  
+    margin-left: var(--padding);
+    margin-right: var(--padding);
+}
+
+.Collapsible_list, .ReactCollapse--content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 4px 0 4px 12px;
+}
+
+.layout_content {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    gap: 48px;
+}
+
+.DocsArticle_article {
+    max-width: 640px;
+    margin: 0 auto 96px;
+    width: 100%;
+}
+
+.ReactCollapse--collapse {
+  transition: height 500ms;
+}
+
+.TableOfContents_aside{
+  --header-height: 64px;
+  --font-size: 13px;
+  position: sticky;
+    top: calc(var(--header-height) + 24px);
+    font-size: var(--font-size);
+    max-width: 250px;
+}
+.toc-minimap {
+  /* display: block; */
+    margin-left: 0;
+    --minimap-top: 48px;
+    width: 100%;
+    top: var(--minimap-top);
+    position: sticky;
+    max-height: calc(100vh - var(--minimap-top));
+    height: -moz-max-content;
+    height: max-content;
+    overflow: auto;
+}
+
+.Minimap_header {
+    min-height: 28px;
+    margin: 0 0 12px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    color: var(--title);
+}
+
+.TableOfContents_container {
+  position: relative;
+}
+
+.TableOfContents_ul {
+    position: relative;
+    padding-left: 12px;
+    border-left: 2px solid transparent;
+}
+
+.TableOfContents_ul:before, .TableOfContents_ul:after {
+    content: "";
+    width: 2px;
+    @apply rounded-full;
+    background-color: var(--border);
+    position: absolute;
+    top: 0;
+    left: -2px;
+    height: 100%;
+}
+
+.TableOfContents_ul:after {
+    background-color: var(--foreground);
+    height: var(--height, 24px);
+    transform: translateY(calc(var(--top, 0px)));
+    transition: transform 0.3s ease;
+}
+
+
+.TableOfContents_ul li 
+{
+  margin-bottom: 8px;
+}
+/* .TableOfContents_ul li a {
+    color: var(--title-secondary);
+} */
+
+
+/* markdown.css */
+
+/* General Styles */
+.DocsArticle_article {
+  line-height: 1.6;
+}
+
+/* Headings */
+.DocsArticle_article h1,
+.DocsArticle_article h2,
+.DocsArticle_article h3,
+.DocsArticle_article h4,
+.DocsArticle_article h5,
+.DocsArticle_article h6 {
+  font-weight: bold;
+  /* padding-bottom: 0.3em; */
+  margin-bottom: 0.5em;
+}
+
+.DocsArticle_article h1 {
+  font-size: 3.75rem;
+        line-height: 1;
+        letter-spacing: -1.6px;
+        font-weight: 500;
+            margin: 0 0 8px;
+}
+
+.DocsArticle_article h2 {
+  font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: -.2px;
+    font-weight: 500;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-top: 72px;
+ 
+}
+
+
+
+.DocsArticle_article>* {
+    margin: 32px auto;
+}
+
+.DocsArticle_article p:first-child, .DocsArticle_article p:first-of-type {
+    margin-top: 0;
+}
+
+.DocsArticle_article p:first-of-type + div[data-rmiz-wrap="visible"]
+{
+  margin-top: 0;
+}
+
+
+.DocsArticle_article p, .DocsArticle_article li {
+    font-size: 15px;
+    line-height: 26px;
+    font-weight: 400;
+    color: var(--title-secondary);
+}
+
+.DocsArticle_article p:first-child {
+    font-size: 17px;
+    line-height: 24px;
+    margin-top: 0; /* Combine the margin-top rule here */
+}
+
+.DocsArticle_article h2+p, .DocsArticle_article h3+p, .DocsArticle_article h4+p {
+    margin-top: 16px;
+}
+.DocsArticle_article p+ul {
+    margin-top: 20px;
+}
+.DocsArticle_article li{
+
+  margin-bottom: 12px;
+}
+.DocsArticle_article div[data-rmiz-wrap="visible"] {
+  margin-bottom: 0;
+}
+
+/* Lists */
+.DocsArticle_article ul,
+.DocsArticle_article ol {
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+.DocsArticle_article ul {
+  list-style-type: disc;
+  padding-left: 14px;
+}
+
+.DocsArticle_article ol {
+  list-style-type: decimal;
+}
+
+/* Links */
+.DocsArticle_article a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+
+
+/* Code */
+.DocsArticle_article code {
+  background: var(--accent);
+  border-radius: 3px;
+  padding: 0.2em 0.4em;
+  font-size: 0.9em;
+}
+
+.DocsArticle_article pre {
+  background: var(--accent);
+  border-radius: 3px;
+  padding: 1em;
+  overflow-x: auto;
+}
+
+/* Blockquotes */
+.DocsArticle_article blockquote {
+  border-left: 4px solid var(--border);
+  padding-left: 1em;
+  margin: 1em 0;
+  color: #555;
+}
+
+/* Images */
+.DocsArticle_article img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tables */
+.DocsArticle_article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+.DocsArticle_article th,
+.DocsArticle_article td {
+  border: 1px solid var(--border);
+  padding: 0.5em;
+  text-align: left;
+}
+
+.DocsArticle_article th {
+  background: var(--accent);
+}
+
+/* Horizontal Rules */
+.DocsArticle_article hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 1em 0;
+}
+
+    .backdrop[data-state="open"] {
+        animation: 180ms cubic-bezier(0.16, 1, 0.3, 1) 0s 1 normal none running jBcSpD;
+    }
+    .overlay-bg {
+      background: var(--color-overlay-primary);
+      backdrop-filter: blur(2px);
+    }
+
+.dialog-content-h {
+    max-height: min(73vh, 560px);
+}
+.dialog {
+  border-radius: 12px;
+    position: fixed;
+    top: 12vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+}
+
+.excerpt{text-overflow:ellipsis;line-clamp:1;-webkit-line-clamp:1;-webkit-box-orient:vertical;display:-webkit-box;overflow:hidden}
+
+
+@media (max-width: 768px) {
+    #docs-menu:checked~.Sidebar_contentContainer, #docs-menu:target~.Sidebar_contentContainer {
+        display: flex;
+        height: calc(100vh - 4rem - 3rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .Sidebar_contentContainer {
+        display: none;
+    }
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
